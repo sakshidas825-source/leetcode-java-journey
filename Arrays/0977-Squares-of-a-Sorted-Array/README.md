@@ -1,32 +1,34 @@
-# 977. Squares of a Sorted Array
+# GFG - Segregate 0s and 1s
 
 ## Problem
-Given an integer array sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
-## Approach
+Given an array consisting only of 0s and 1s, modify the array in-place so that all 0s appear on the left and all 1s appear on the right.
 
-### Initial Thought
-- Square every element.
-- Sort the array again.
-- Time Complexity: O(n log n)
+## Initial Thought
 
-### Optimized Approach
+My first idea was to use a bubble-like swapping approach, but I realized it performs unnecessary swaps.
+
+## Optimized Approach
+
 Use the Two Pointer technique.
 
-- Place one pointer at the beginning.
-- Place another pointer at the end.
-- Compare absolute values.
-- Insert the larger square at the end of the answer array.
-- Move the corresponding pointer.
-- Continue until both pointers meet.
+- Place one pointer at the beginning (`i`) and another at the end (`j`).
+- If `arr[i]` is `0`, move `i` forward.
+- If `arr[j]` is `1`, move `j` backward.
+- Otherwise, swap `arr[i]` and `arr[j]`, then move both pointers.
+
+This rearranges the array in a single traversal.
 
 ## Time Complexity
-O(n)
+
+- O(n)
 
 ## Space Complexity
-O(n)
+
+- O(1)
 
 ## Concepts Learned
+
 - Two Pointers
-- Absolute Value Comparison
-- Sorted Arrays
+- In-place Array Modification
+- Swapping Elements
